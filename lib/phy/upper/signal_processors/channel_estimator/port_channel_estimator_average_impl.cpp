@@ -16,6 +16,7 @@
 #include "ocudu/phy/support/re_buffer.h"
 #include "ocudu/phy/support/resource_grid_reader.h"
 #include "ocudu/support/transform_optional.h"
+#include <sys/cdefs.h>
 
 using namespace ocudu;
 
