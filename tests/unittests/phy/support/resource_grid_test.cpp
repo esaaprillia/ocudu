@@ -7,6 +7,7 @@
 #include "ocudu/phy/support/resource_grid_writer.h"
 #include "ocudu/phy/support/support_factories.h"
 #include "ocudu/support/ocudu_test.h"
+#include <math.h>
 #include <random>
 
 using namespace ocudu;
