@@ -4,6 +4,7 @@
 
 #include "cell_scheduler.h"
 #include "logging/scheduler_metrics_handler.h"
+#include <math.h>
 
 using namespace ocudu;
 
