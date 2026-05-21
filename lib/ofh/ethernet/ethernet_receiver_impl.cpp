@@ -14,6 +14,8 @@
 #include <net/if.h>
 #include <sys/ioctl.h>
 #include <thread>
+#include <sys/types.h>
+#include <sys/time.h>
 #include <unistd.h>
 
 using namespace ocudu;
@@ -124,7 +126,7 @@ static bool wait_for_data(int socket, std::chrono::microseconds timeout)
   fd_set read_fs;
   FD_ZERO(&read_fs);
   FD_SET(socket, &read_fs);
-  timeval tv = {0, static_cast<__suseconds_t>(timeout.count())};
+  timeval tv = {0, static_cast<suseconds_t>(timeout.count())};
 
   return (::select(socket + 1, &read_fs, nullptr, nullptr, &tv) > 0);
 }
