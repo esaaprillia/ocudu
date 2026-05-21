@@ -6,6 +6,7 @@
 #include "ocudu/support/engineering_notation.h"
 #include "ocudu/support/format/custom_formattable.h"
 #include "ocudu/support/format/fmt_to_c_str.h"
+#include <math.h>
 
 using namespace ocudu;
 
