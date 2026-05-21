@@ -6,6 +6,7 @@
 #include "ocudu/support/engineering_notation.h"
 #include "ocudu/support/format/custom_formattable.h"
 #include "ocudu/support/format/fmt_to_c_str.h"
+#include <math.h>
 
 using namespace ocudu;
 
@@ -86,7 +87,7 @@ void scheduler_cell_metrics_consumer_stdout::handle_metric(const std::optional<s
 
       fmt::print(" |");
 
-      if (!std::isnan(ue.pusch_snr_db) && !iszero(ue.pusch_snr_db)) {
+      if (!std::isnan(ue.pusch_snr_db) && std::fpclassify(ue.pusch_snr_db) != FP_ZERO) {
         fmt::print(" {:>5.1f}", std::clamp(ue.pusch_snr_db, -99.9f, 99.9f));
       } else {
         fmt::print(" {:>5.5}", "n/a");
@@ -311,7 +312,7 @@ void scheduler_cell_metrics_consumer_log::handle_metric(const std::optional<sche
         fmt::format_to(std::back_inserter(buffer), " dl_olla={:.4}", ue.last_dl_olla.value());
       }
 
-      if (!std::isnan(ue.pusch_snr_db) && !iszero(ue.pusch_snr_db)) {
+      if (!std::isnan(ue.pusch_snr_db) && std::fpclassify(ue.pusch_snr_db) != FP_ZERO) {
         fmt::format_to(std::back_inserter(buffer), " pusch_snr_db={:.1f}", std::clamp(ue.pusch_snr_db, -99.9f, 99.9f));
       } else {
         fmt::format_to(std::back_inserter(buffer), " pusch_snr_db=n/a");
