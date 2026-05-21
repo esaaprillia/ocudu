@@ -9,6 +9,8 @@
 #include "demodulation_mapper_qpsk.h"
 #include "ocudu/support/math/math_utils.h"
 #include "ocudu/support/ocudu_assert.h"
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 using namespace ocudu;
 
