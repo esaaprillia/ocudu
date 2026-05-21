@@ -6,6 +6,7 @@
 #include "helpers.h"
 #include "json_generators/generator_helpers.h"
 #include "ocudu/scheduler/scheduler_metrics.h"
+#include <math.h>
 
 using namespace ocudu;
 using namespace app_helpers;
