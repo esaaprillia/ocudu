@@ -11,6 +11,10 @@
 #include "ocudu/ocuduvec/circ_shift.h"
 #include "ocudu/ocuduvec/copy.h"
 
+#ifndef __always_inline
+#define __always_inline __inline __attribute__((__always_inline__))
+#endif
+
 using namespace ocudu;
 using namespace ocudu::ldpc;
 
