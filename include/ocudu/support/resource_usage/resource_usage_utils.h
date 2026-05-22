@@ -6,7 +6,16 @@
 #include "ocudu/adt/expected.h"
 #include "ocudu/support/resource_usage/resource_usage_metrics.h"
 #include <chrono>
+#include <math.h>
+#include <sys/time.h>
 #include <sys/resource.h>
+
+#ifndef RUSAGE_THREAD
+#define RUSAGE_THREAD 1
+#endif
+#ifndef RUSAGE_SELF
+#define RUSAGE_SELF 0
+#endif
 
 namespace ocudu {
 namespace resource_usage_utils {
